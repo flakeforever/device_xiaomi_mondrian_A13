@@ -3209,21 +3209,6 @@ vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 
 # WiFi
-vendor/bin/athdiag
-vendor/bin/spectraltool
-vendor/bin/wifilearner
-vendor/bin/hw/android.hardware.wifi@1.0-service
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.wifi.wificfr@1.0-service.rc
-vendor/etc/init/vendor.qti.hardware.wifi.wifilearner@1.0-service.rc
-vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.wifi.wificfr@1.0-service.xml
-vendor/etc/wifi/icm.conf
-vendor/etc/wifi/passpointProfile.conf
-vendor/etc/wifi/qca6750/WCNSS_qcom_cfg.ini
-vendor/lib64/libwifi-hal.so
-vendor/lib64/vendor.qti.hardware.wifi.wificfr@1.0.so
-vendor/lib64/vendor.qti.hardware.wifi.wifilearner@1.0.so
 vendor/bin/cnss-daemon
 vendor/etc/init/init.vendor.wlan.rc
 
