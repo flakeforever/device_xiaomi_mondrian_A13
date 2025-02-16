@@ -82,26 +82,27 @@ function append_content() {
 
 function blob_fixup() {
     case "${1}" in
-        vendor/etc/init/init.embmssl_server.rc)
-            sed -i -n '/interface/!p' "${2}"
+        vendor/lib/soundfx/libmisoundfx.so | vendor/lib64/soundfx/libmisoundfx.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v33.so" "${2}"
+            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
             ;;
-        vendor/lib64/libsdmcore.so)
+        vendor/lib/hw/displayfeature.default.so | vendor/lib64/hw/displayfeature.default.so)
+            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            ;;
+        vendor/bin/hw/vendor.qti.media.c2@1.0-service)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v33.so" "${2}"
             ;;
-        vendor/lib/libsdmcore.so)
-            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v33.so" "${2}"
+        vendor/bin/hw/dolbycodec2 | vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service)     
+            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
-        vendor/lib64/soundfx/libmisoundfx.so)
-            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        vendor/lib/c2.dolby.client.so)
+            "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
             ;;
-        vendor/lib/soundfx/libmisoundfx.so)
-            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        vendor/lib64/vendor.libdpmframework.so)     
+            "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
             ;;
-        vendor/lib64/hw/displayfeature.default.so)
-            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
-            ;;
-        vendor/lib/hw/displayfeature.default.so)
-            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+        vendor/lib/libstagefright_softomx.so)
+            "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
         vendor/bin/hw/android.hardware.security.keymint-service-qti | vendor/lib64/libqtikeymint.so)
             "${PATCHELF}" --add-needed "android.hardware.security.rkp-V1-ndk.so" "${2}"
@@ -109,14 +110,8 @@ function blob_fixup() {
         vendor/bin/qcc-trd)
             "${PATCHELF}" --replace-needed "libgrpc++_unsecure.so" "libgrpc++_unsecure_prebuilt.so" "${2}"
             ;;
-        vendor/lib/c2.dolby.client.so)
-            "${PATCHELF}" --add-needed "libcodec2_hidl_shim.so" "${2}"
-            ;;
-        vendor/bin/hw/dolbycodec2 | vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service | vendor/bin/hw/vendor.qti.media.c2@1.0-service)     
-            "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
-            ;;
-        vendor/lib64/vendor.libdpmframework.so)     
-            "${PATCHELF}" --add-needed "libhidlbase_shim.so" "${2}"
+        vendor/etc/init/init.embmssl_server.rc)
+            sed -i -n '/interface/!p' "${2}"
             ;;
         vendor/etc/qcril_database/upgrade/config/6.0_config.sql)
             [ "$2" = "" ] && return 0

@@ -145,6 +145,7 @@ vendor/lib/libagm_mixer_plugin.so
 vendor/lib/libagm_pcm_plugin.so
 vendor/lib/libagmclient.so
 vendor/lib/libagmmixer.so
+vendor/lib/libmisight.so
 -vendor/lib/vendor.qti.hardware.AGMIPC@1.0-impl.so
 vendor/lib/vendor.qti.hardware.AGMIPC@1.0.so
 vendor/lib64/libagm_compress_plugin.so
@@ -152,6 +153,7 @@ vendor/lib64/libagm_mixer_plugin.so
 vendor/lib64/libagm_pcm_plugin.so
 vendor/lib64/libagmclient.so
 vendor/lib64/libagmmixer.so
+vendor/lib64/libmisight.so
 -vendor/lib64/vendor.qti.hardware.AGMIPC@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.AGMIPC@1.0.so
 
@@ -272,8 +274,8 @@ vendor/lib/lib_bt_bundle.so
 vendor/lib/lib_bt_lhdc.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbluetooth_audio_session_qti_2_1.so
-vendor/lib/libbt-hidlclient.so
 vendor/lib/libbtnv.so
+vendor/lib/libsoc_helper.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/btaudio_offload_if.so
@@ -289,8 +291,8 @@ vendor/lib64/lib_bt_bundle.so
 vendor/lib64/lib_bt_lhdc.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
-vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
+vendor/lib64/libsoc_helper.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
@@ -1226,6 +1228,7 @@ vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
 vendor/lib/libcneqmiutils.so
+vendor/lib/libjnihelper.so
 vendor/lib/libmasc.so
 vendor/lib/libshsc.so
 vendor/lib/libwms.so
@@ -1262,6 +1265,7 @@ vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
 vendor/lib64/libcneqmiutils.so
+vendor/lib64/libjnihelper.so
 vendor/lib64/libmasc.so
 vendor/lib64/libshsc.so
 vendor/lib64/libwms.so
@@ -1860,8 +1864,8 @@ vendor/lib/hw/vulkan.adreno.so
 vendor/lib64/hw/vulkan.adreno.so
 
 # Hotword Enrollment
-product/priv-app/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND/HotwordEnrollmentOKGoogleHEXAGON_WIDEBAND.apk
 product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk
+product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
@@ -1911,6 +1915,21 @@ vendor/etc/permissions/android.hardware.hardware_keystore.xml
 vendor/etc/vintf/manifest/android.hardware.security.keymint-service-qti-rkp.xml
 vendor/lib/libqtikeymint.so
 vendor/lib64/libqtikeymint.so
+
+# Listen
+vendor/etc/vintf/manifest/manifest_non_qmaa.xml
+vendor/etc/vintf/manifest/manifest_non_qmaa_extn.xml
+vendor/lib/hw/sound_trigger.primary.taro.so
+vendor/lib/libeai_fixed_32.so
+vendor/lib/liblistensoundmodel2vendor.so
+vendor/lib/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
+vendor/lib/vendor.qti.hardware.ListenSoundModel@1.0.so
+vendor/lib64/hw/sound_trigger.primary.taro.so
+vendor/lib64/libeai_fixed.so
+vendor/lib64/libeai_float.so
+vendor/lib64/liblistensoundmodel2vendor.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.ListenSoundModel@1.0.so
 
 # Media
 vendor/bin/hw/vendor.qti.media.c2@1.0-service
@@ -1973,9 +1992,31 @@ vendor/lib/libqcodec2_mockqc2filter.so
 vendor/lib/libqcodec2_platform.so
 vendor/lib/libqcodec2_utils.so
 vendor/lib/libqcodec2_v4l2codec.so
+vendor/lib/libstagefright_soft_aacdec.so
+vendor/lib/libstagefright_soft_aacenc.so
 vendor/lib/libstagefright_soft_ac4dec.so
+vendor/lib/libstagefright_soft_amrdec.so
+vendor/lib/libstagefright_soft_amrnbenc.so
+vendor/lib/libstagefright_soft_amrwbenc.so
+vendor/lib/libstagefright_soft_avcdec.so
+vendor/lib/libstagefright_soft_avcenc.so
 vendor/lib/libstagefright_soft_ddpdec.so
+vendor/lib/libstagefright_soft_flacdec.so
+vendor/lib/libstagefright_soft_flacenc.so
+vendor/lib/libstagefright_soft_g711dec.so
+vendor/lib/libstagefright_soft_gsmdec.so
+vendor/lib/libstagefright_soft_hevcdec.so
+vendor/lib/libstagefright_soft_mp3dec.so
+vendor/lib/libstagefright_soft_mpeg2dec.so
+vendor/lib/libstagefright_soft_mpeg4dec.so
+vendor/lib/libstagefright_soft_mpeg4enc.so
+vendor/lib/libstagefright_soft_opusdec.so
+vendor/lib/libstagefright_soft_rawdec.so
+vendor/lib/libstagefright_soft_vorbisdec.so
+vendor/lib/libstagefright_soft_vpxdec.so
+vendor/lib/libstagefright_soft_vpxenc.so
 vendor/lib/libstagefright_softomx.so
+vendor/lib/libstagefright_softomx_plugin.so
 vendor/lib/libstagefrighthw.so
 vendor/lib/libvideotxr.so
 vendor/lib/qti.video.utils.videobufferlayout.so
@@ -2487,8 +2528,9 @@ product/etc/permissions/UimService.xml
 product/framework/uimgbalibrary.jar
 product/framework/uimgbamanagerlibrary.jar
 product/framework/uimservicelibrary.jar
+system/lib/vendor.qti.diaghal-V1-ndk.so:system_ext/lib/vendor.qti.diaghal-V1-ndk.so
 system_ext/app/ImsRcsService/ImsRcsService.apk
-system_ext/app/QtiTelephony/QtiTelephony.apk|7b041fdbce39b5895d873a3747c8423b2c6a63f9
+system_ext/app/QtiTelephony/QtiTelephony.apk|3568126123554cbb94ea6f33ae6aa0e473ec8d88
 system_ext/app/QtiTelephonyService/QtiTelephonyService.apk
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_permissions.xml
@@ -2509,6 +2551,7 @@ system_ext/framework/vendor.qti.ims.rcsuce-V1.0-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.1-java.jar
 system_ext/framework/vendor.qti.ims.rcsuce-V1.2-java.jar
 system_ext/framework/vendor.qti.ims.rcsuceaidlservice-V1-java.jar
+system/lib64/vendor.qti.diaghal-V1-ndk.so:system_ext/lib64/vendor.qti.diaghal-V1-ndk.so
 system_ext/lib64/lib-imsvideocodec.so
 system_ext/lib64/lib-imsvt.so
 system_ext/lib64/lib-imsvtextutils.so
@@ -2519,7 +2562,7 @@ system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
-system_ext/priv-app/ims/ims.apk|7e8a0629bbebe1bb33bba7ed3ba432f6cdbc1b00
+system_ext/priv-app/ims/ims.apk|a4782ffc928d6d74b8757c4bf5fcbb6783e6e27a
 system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/app/IWlanService/IWlanService.apk
 vendor/bin/ATFWD-daemon
